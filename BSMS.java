@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.Scanner.*;
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
 
@@ -10,15 +9,18 @@ class SubDetails extends Details{   //Concept of Inheritance"
     public int getInt(){            //Abstract method definition:
         Scanner sc1= new Scanner(System.in);
                 int option = sc1.nextInt();
+                sc1.close();
                 return option;
     }
     String getDetails(){
         System.out.println("\nEnter Your UserName: ");
         Scanner sc2 = new Scanner(System.in);
         String str1 = sc2.nextLine();
+        sc2.close();
         Scanner sc3 = new Scanner(System.in);
         System.out.println("\nEnter the password for ");
         String str2 = sc3.nextLine();
+        sc3.close();
         System.out.println("\nWelcome "+str1);
         return str2;
     }
@@ -31,6 +33,7 @@ public class BSMS{
                 SubDetails object1 = new SubDetails();
                 Scanner sc1= new Scanner(System.in);
                 int option = sc1.nextInt();
+                sc1.close();
                 if (option == 1){
                         object1.getDetails();
                         try {                                                    //Concept of Exceptional Handling:
